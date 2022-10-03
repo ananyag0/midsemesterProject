@@ -1,0 +1,71 @@
+.title {
+    font-size: large;
+    font-weight: bold;
+    font-style: oblique;
+    color: black;
+}
+
+img {
+    height: 463px;
+    width: 463px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.left-head {
+    background-color: lightgrey; 
+    color: black;
+    font-size: 30px;
+}
+
+.buttons {
+    background: #E8E8E8;
+    border-radius: 10px;
+}
+
+.right-head {
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.desc {
+width: 486px;
+height: 598px;
+left: 838px;
+top: 223px;
+
+background: #E8E8E8;
+}
+
+.moves {
+    width: 173px;
+    height: 69px;
+    left: 1102px;
+    top: 902px;
+    
+    background: #E8E8E8;
+    border-radius: 10px;
+
+}
+
+.info {
+
+width: 173px;
+height: 69px;
+left: 886px;
+top: 902px;
+
+background: #7CFF79;
+border-radius: 10px;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
