@@ -69,3 +69,15 @@ border-radius: 10px;
     justify-content: center;
     align-items: center;
 }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+}
+
+#main-img{}
+
+#name{}
