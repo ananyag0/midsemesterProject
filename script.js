@@ -1,15 +1,18 @@
 let data;
-fetch("https://pokeapi.co/api/v2/pokemon/2").then((resp) => resp.json()).then((data)=> allFunctions(data));
+fetch("https://pokeapi.co/api/v2/pokemon/2").then((resp) => resp.json()).then((info)=> {
+    data = info;
+    allFunctions(info)});
    
 
 let idNum = 1;
 
-allFunctions = (data) => {
-    showName(data.name);
-    getImage(data.sprites.front_default);
-    getTypes(data.types);
+allFunctions = (info) => {
+    console.log(info);
+    showName(info.name);
+    getImage(info.sprites.front_default);
+    getTypes(info.types);
     //getInfoAndMoves(data);
-    getInfo(data);
+    getInfo(info);
     //getMoves(data.moves);
 };
 
@@ -30,41 +33,41 @@ getTypes = (data) => {
         typeBox1.textContent = data[0].type.name;
 
         if (data[0].type.name == "normal")
-            typeBox1.style.backgroundColor = "A8A77A";
+            typeBox1.style.backgroundColor = "#A8A77A";
         else if (data[0].type.name == "fire")
-            typeBox1.style.backgroundColor = "EE8130";
+            typeBox1.style.backgroundColor = "#EE8130";
         else if (data[0].type.name == "water")
-            typeBox1.style.backgroundColor = "6390F0";
+            typeBox1.style.backgroundColor = "#6390F0";
         else if (data[0].type.name == "electric")
-            typeBox1.style.backgroundColor = "F7D02C";
+            typeBox1.style.backgroundColor = "#F7D02C";
         else if (data[0].type.name == "grass")
-            typeBox1.style.backgroundColor = "7AC74C";
+            typeBox1.style.backgroundColor = "#7AC74C";
         else if (data[0].type.name == "ice")
-            typeBox1.style.backgroundColor = "96D9D6";
+            typeBox1.style.backgroundColor = "#96D9D6";
         else if (data[0].type.name == "fighting")
-            typeBox1.style.backgroundColor = "C22E28";
+            typeBox1.style.backgroundColor = "#C22E28";
         else if (data[0].type.name == "poison")
-            typeBox1.style.backgroundColor = "A33EA1";
+            typeBox1.style.backgroundColor = "#A33EA1";
         else if (data[0].type.name == "ground")
-            typeBox1.style.backgroundColor = "E2BF65";
+            typeBox1.style.backgroundColor = "#E2BF65";
         else if (data[0].type.name == "flying")
-            typeBox1.style.backgroundColor = "A98FF3";
+            typeBox1.style.backgroundColor = "#A98FF3";
         else if (data[0].type.name == "psychic")
-            typeBox1.style.backgroundColor = "F95587";
+            typeBox1.style.backgroundColor = "#F95587";
         else if (data[0].type.name == "bug")
-            typeBox1.style.backgroundColor = "A6B91A";
+            typeBox1.style.backgroundColor = "#A6B91A";
         else if (data[0].type.name == "rock")
-            typeBox1.style.backgroundColor = "B6A136";
+            typeBox1.style.backgroundColor = "#B6A136";
         else if (data[0].type.name == "ghost")
-            typeBox1.style.backgroundColor = "735797";
+            typeBox1.style.backgroundColor = "#735797";
         else if (data[0].type.name == "dragon")
-            typeBox1.style.backgroundColor = "6F35FC";
+            typeBox1.style.backgroundColor = "#6F35FC";
         else if (data[0].type.name == "dark")
-            typeBox1.style.backgroundColor = "705746";
+            typeBox1.style.backgroundColor = "#705746";
         else if (data[0].type.name == "steel")
-            typeBox1.style.backgroundColor = "B7B7CE";
+            typeBox1.style.backgroundColor = "#B7B7CE";
         else if (data[0].type.name == "fairy")
-            typeBox1.style.backgroundColor = "D685AD";
+            typeBox1.style.backgroundColor = "#D685AD";
         const typeBox2 = document.getElementById("type2");
         typeBox2.textContent = "";
 
@@ -72,92 +75,93 @@ getTypes = (data) => {
     else if (data.length == 2) {
         const typeBox1 = document.getElementById("type1");
         typeBox1.textContent = data[0].type.name;
-        
+
         if (data[0].type.name == "normal")
-            typeBox1.style.backgroundColor = "A8A77A";
+            typeBox1.style.backgroundColor = "#A8A77A";
         else if (data[0].type.name == "fire")
-            typeBox1.style.backgroundColor = "EE8130";
+            typeBox1.style.backgroundColor = "#EE8130";
         else if (data[0].type.name == "water")
-            typeBox1.style.backgroundColor = "6390F0";
+            typeBox1.style.backgroundColor = "#6390F0";
         else if (data[0].type.name == "electric")
-            typeBox1.style.backgroundColor = "F7D02C";
+            typeBox1.style.backgroundColor = "#F7D02C";
         else if (data[0].type.name == "grass")
-            typeBox1.style.backgroundColor = "7AC74C";
+            typeBox1.style.backgroundColor = "#7AC74C";
         else if (data[0].type.name == "ice")
-            typeBox1.style.backgroundColor = "96D9D6";
+            typeBox1.style.backgroundColor = "#96D9D6";
         else if (data[0].type.name == "fighting")
-            typeBox1.style.backgroundColor = "C22E28";
+            typeBox1.style.backgroundColor = "#C22E28";
         else if (data[0].type.name == "poison")
-            typeBox1.style.backgroundColor = "A33EA1";
+            typeBox1.style.backgroundColor = "#A33EA1";
         else if (data[0].type.name == "ground")
-            typeBox1.style.backgroundColor = "E2BF65";
+            typeBox1.style.backgroundColor = "#E2BF65";
         else if (data[0].type.name == "flying")
-            typeBox1.style.backgroundColor = "A98FF3";
+            typeBox1.style.backgroundColor = "#A98FF3";
         else if (data[0].type.name == "psychic")
-            typeBox1.style.backgroundColor = "F95587";
+            typeBox1.style.backgroundColor = "#F95587";
         else if (data[0].type.name == "bug")
-            typeBox1.style.backgroundColor = "A6B91A";
+            typeBox1.style.backgroundColor = "#A6B91A";
         else if (data[0].type.name == "rock")
-            typeBox1.style.backgroundColor = "B6A136";
+            typeBox1.style.backgroundColor = "#B6A136";
         else if (data[0].type.name == "ghost")
-            typeBox1.style.backgroundColor = "735797";
+            typeBox1.style.backgroundColor = "#735797";
         else if (data[0].type.name == "dragon")
-            typeBox1.style.backgroundColor = "6F35FC";
+            typeBox1.style.backgroundColor = "#6F35FC";
         else if (data[0].type.name == "dark")
-            typeBox1.style.backgroundColor = "705746";
+            typeBox1.style.backgroundColor = "#705746";
         else if (data[0].type.name == "steel")
-            typeBox1.style.backgroundColor = "B7B7CE";
+            typeBox1.style.backgroundColor = "#B7B7CE";
         else if (data[0].type.name == "fairy")
-            typeBox1.style.backgroundColor = "D685AD";
+            typeBox1.style.backgroundColor = "#685AD";
 
 
         const typeBox2 = document.getElementById("type2");
         typeBox2.textContent = data[1].type.name;
 
         if (data[1].type.name == "normal")
-            typeBox2.style.backgroundColor = "A8A77A";
+            typeBox2.style.backgroundColor = "#A8A77A";
         else if (data[1].type.name == "fire")
-            typeBox2.style.backgroundColor = "EE8130";
+            typeBox2.style.backgroundColor = "#EE8130";
         else if (data[1].type.name == "water")
-            typeBox2.style.backgroundColor = "6390F0";
+            typeBox2.style.backgroundColor = "#6390F0";
         else if (data[1].type.name == "electric")
-            typeBox2.style.backgroundColor = "F7D02C";
+            typeBox2.style.backgroundColor = "#F7D02C";
         else if (data[1].type.name == "grass")
-            typeBox2.style.backgroundColor = "7AC74C";
+            typeBox2.style.backgroundColor = "#7AC74C";
         else if (data[1].type.name == "ice")
-            typeBox2.style.backgroundColor = "96D9D6";
+            typeBox2.style.backgroundColor = "#96D9D6";
         else if (data[1].type.name == "fighting")
-            typeBox2.style.backgroundColor = "C22E28";
+            typeBox2.style.backgroundColor = "#C22E28";
         else if (data[1].type.name == "poison")
-            typeBox2.style.backgroundColor = "A33EA1";
+            typeBox2.style.backgroundColor = "#A33EA1";
         else if (data[1].type.name == "ground")
-            typeBox2.style.backgroundColor = "E2BF65";
+            typeBox2.style.backgroundColor = "#E2BF65";
         else if (data[1].type.name == "flying")
-            typeBox2.style.backgroundColor = "A98FF3";
+            typeBox2.style.backgroundColor = "#A98FF3";
         else if (data[1].type.name == "psychic")
-            typeBox2.style.backgroundColor = "F95587";
+            typeBox2.style.backgroundColor = "#F95587";
         else if (data[1].type.name == "bug")
-            typeBox2.style.backgroundColor = "A6B91A";
+            typeBox2.style.backgroundColor = "#A6B91A";
         else if (data[1].type.name == "rock")
-            typeBox2.style.backgroundColor = "B6A136";
+            typeBox2.style.backgroundColor = "#B6A136";
         else if (data[1].type.name == "ghost")
-            typeBox2.style.backgroundColor = "735797";
+            typeBox2.style.backgroundColor = "#735797";
         else if (data[1].type.name == "dragon")
-            typeBox2.style.backgroundColor = "6F35FC";
+            typeBox2.style.backgroundColor = "#6F35FC";
         else if (data[1].type.name == "dark")
-            typeBox2.style.backgroundColor = "705746";
+            typeBox2.style.backgroundColor = "#705746";
         else if (data[1].type.name == "steel")
-            typeBox2.style.backgroundColor = "B7B7CE";
+            typeBox2.style.backgroundColor = "#B7B7CE";
         else if (data[1].type.name == "fairy")
-            typeBox2.style.backgroundColor = "D685AD";
+            typeBox2.style.backgroundColor = "#D685AD";
     }
     
 }
  
 
 function getInfoAndMoves(data, x) {
+    console.log(data);
     if (x == "moves") {
-        getMoves(data.moves);
+        getMoves(data);
     }
     else {
         getInfo(data);
@@ -186,6 +190,7 @@ document.getElementById("info-box").addEventListener("click",  function() {
 });
 
 getMoves = (data) => {
+    console.log(data);
     const movesBox = document.getElementById("main-text-box");
     movesBox.innerText = data.reduce((acc, cur)=> acc + cur.move.name + "\n", "");
 }
@@ -198,10 +203,6 @@ document.getElementById("moves-box").addEventListener("click",  function() {
 
 
 
-
-
-
-
 // new fetch request for left arrow
 
 function newFetchReqLeft() {
@@ -209,14 +210,18 @@ function newFetchReqLeft() {
     if (idNum != 1) {
     idNum = idNum - 1;
     }
-    fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((data)=> allFunctions(data));
+    fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((info)=> {
+        data = info;
+        allFunctions(info)});
 }
 
 // new fetch request for right arrow
 function newFetchReqRight() {
     console.log('here')
     idNum = idNum + 1;
-    fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((data)=> allFunctions(data));
+    fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((info)=> {
+        data = info;
+        allFunctions(info)});
 }
 
 
@@ -224,6 +229,4 @@ document.getElementById("left-arrow").addEventListener("click", newFetchReqLeft)
 document.getElementById("right-arrow").addEventListener("click", newFetchReqRight);
 
 
-
-allFunctions(data);
 
