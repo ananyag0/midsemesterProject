@@ -5,14 +5,15 @@ fetch("https://pokeapi.co/api/v2/pokemon/2").then((resp) => resp.json()).then((i
    
 
 let idNum = 1;
+let status = 2;
 
 allFunctions = (info) => {
     console.log(info);
     showName(info.name);
     getImage(info.sprites.front_default);
     getTypes(info.types);
-    //getInfoAndMoves(data);
-    getInfo(info);
+    //getInfoAndMoves(info, status);
+    getInfoAndMoves(info, status);
     //getMoves(data.moves);
 };
 
@@ -70,7 +71,7 @@ getTypes = (data) => {
             typeBox1.style.backgroundColor = "#D685AD";
         const typeBox2 = document.getElementById("type2");
         typeBox2.textContent = "";
-        typeBox2.style.backgroundColor = "#00FFFFFF";
+        typeBox2.style.backgroundColor = "transparent";
 
     }
     else if (data.length == 2) {
@@ -160,9 +161,9 @@ getTypes = (data) => {
  
 
 function getInfoAndMoves(data, x) {
-    console.log(data);
-    if (x == "moves") {
-        getMoves(data);
+    console.log(x);
+    if (x == 1) {
+        getMoves(data.moves);
     }
     else {
         getInfo(data);
@@ -184,22 +185,24 @@ getInfo = (data) => {
 }
 
 document.getElementById("info-box").addEventListener("click",  function() {
-    getInfoAndMoves(data, "info");
+    getInfoAndMoves(data, 2);
     document.getElementById('info-box').style.backgroundColor = '#7CFF79';
     document.getElementById('moves-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Info';
+    status = 2;
 });
 
 getMoves = (data) => {
-    console.log(data);
+    console.log("getting here");
     const movesBox = document.getElementById("main-text-box");
     movesBox.innerText = data.reduce((acc, cur)=> acc + cur.move.name + "\n", "");
 }
 document.getElementById("moves-box").addEventListener("click",  function() {
-    getInfoAndMoves(data.moves, "moves");
+    getInfoAndMoves(data, 1);
     document.getElementById('moves-box').style.backgroundColor = '#7CFF79';
     document.getElementById('info-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Moves';
+    status= 1;
 });
 
 
@@ -223,6 +226,7 @@ function newFetchReqRight() {
     fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((info)=> {
         data = info;
         allFunctions(info)});
+    console.log("status at end of right fetch after running all functions: " + status);
 }
 
 
