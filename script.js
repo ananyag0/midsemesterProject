@@ -70,6 +70,7 @@ getTypes = (data) => {
             typeBox1.style.backgroundColor = "#D685AD";
         const typeBox2 = document.getElementById("type2");
         typeBox2.textContent = "";
+        typeBox2.style.backgroundColor = "#00FFFFFF";
 
     }
     else if (data.length == 2) {
@@ -184,8 +185,8 @@ getInfo = (data) => {
 
 document.getElementById("info-box").addEventListener("click",  function() {
     getInfoAndMoves(data, "info");
-    document.getElementById('info-box').style.backgroundColor = 'green';
-    document.getElementById('moves-box').style.backgroundColor = 'grey';
+    document.getElementById('info-box').style.backgroundColor = '#7CFF79';
+    document.getElementById('moves-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Info';
 });
 
@@ -196,8 +197,8 @@ getMoves = (data) => {
 }
 document.getElementById("moves-box").addEventListener("click",  function() {
     getInfoAndMoves(data.moves, "moves");
-    document.getElementById('moves-box').style.backgroundColor = 'green';
-    document.getElementById('info-box').style.backgroundColor = 'grey';
+    document.getElementById('moves-box').style.backgroundColor = '#7CFF79';
+    document.getElementById('info-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Moves';
 });
 

@@ -13,54 +13,114 @@ img {
 }
 
 .left-head {
-    background-color: lightgrey; 
+    background-color: #E8E8E8; 
     color: black;
     font-size: 30px;
+    border: 1px solid #000000;
+    border-radius: 10px;    
+    padding-right: 150px;
+    padding-left:150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
+.right-head {
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    right-margin: 20px; 
+}
+
+/* not working */
+.label {
+    text-align: left;
+}
+
+.label-desc {
+    text-align: left;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.type {
+    /* not working */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start; */
+    
+    padding-right:20px;
+    padding-left:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 20px;
+}
+
 
 .buttons {
     background: #E8E8E8;
     border-radius: 10px;
 }
 
-.right-head {
-    color: black;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
-}
+
 
 .desc {
-width: 486px;
-height: 598px;
-left: 838px;
-top: 223px;
-
+font-size: 36px;
+font-family:Arial, Helvetica, sans-serif;
 background: #E8E8E8;
 }
 
 .moves {
-    width: 173px;
-    height: 69px;
-    left: 1102px;
-    top: 902px;
-    
+    font-size: 32px;
+    margin: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: #E8E8E8;
     border-radius: 10px;
+    border-color: transparent;
 
 }
 
 .info {
-
-width: 173px;
-height: 69px;
-left: 886px;
-top: 902px;
-
+font-size: 32px;
+margin: 15px;
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 10px;
+padding-bottom: 10px;
 background: #7CFF79;
 border-radius: 10px;
+border-color: transparent;
+
+}
+
+#info-moves-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #main {
@@ -83,11 +143,7 @@ h1 {
 #name{}
 
 .type-1{
-    width: 117px;
-    height: 41px;
-    left: 129px;
-    top: 815px;
-    border-radius: 10px;
+    
 }
 
 #type-2{
