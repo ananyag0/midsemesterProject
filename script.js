@@ -7,7 +7,6 @@ let idNum = 1;
 let stat = 2;
 
 allFunctions = (info) => {
-    console.log(info);
     showName(info.name);
     getImage(info.sprites.front_default);
     getTypes(info.types);
