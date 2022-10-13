@@ -2,19 +2,16 @@ let data;
 fetch("https://pokeapi.co/api/v2/pokemon/1").then((resp) => resp.json()).then((info)=> {
     data = info;
     allFunctions(info)});
-   
 
 let idNum = 1;
-let status = 2;
+let stat = 2;
 
 allFunctions = (info) => {
     console.log(info);
     showName(info.name);
     getImage(info.sprites.front_default);
     getTypes(info.types);
-    //getInfoAndMoves(info, status);
-    getInfoAndMoves(info, status);
-    //getMoves(data.moves);
+    getInfoAndMoves(info, stat);
 };
 
 getImage = (image) => {
@@ -73,8 +70,7 @@ getTypes = (data) => {
         typeBox2.textContent = "";
         typeBox2.style.backgroundColor = "transparent";
 
-    }
-    else if (data.length == 2) {
+    } else if (data.length == 2) {
         const typeBox1 = document.getElementById("type1");
         typeBox1.textContent = data[0].type.name;
 
@@ -114,7 +110,6 @@ getTypes = (data) => {
             typeBox1.style.backgroundColor = "#B7B7CE";
         else if (data[0].type.name == "fairy")
             typeBox1.style.backgroundColor = "#685AD";
-
 
         const typeBox2 = document.getElementById("type2");
         typeBox2.textContent = data[1].type.name;
@@ -156,16 +151,13 @@ getTypes = (data) => {
         else if (data[1].type.name == "fairy")
             typeBox2.style.backgroundColor = "#D685AD";
     }
-    
 }
  
-
 function getInfoAndMoves(data, x) {
     console.log(x);
     if (x == 1) {
         getMoves(data.moves);
-    }
-    else {
+    } else {
         getInfo(data);
     }
 }
@@ -189,11 +181,10 @@ document.getElementById("info-box").addEventListener("click",  function() {
     document.getElementById('info-box').style.backgroundColor = '#7CFF79';
     document.getElementById('moves-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Info';
-    status = 2;
+    stat = 2;
 });
 
 getMoves = (data) => {
-    console.log("getting here");
     const movesBox = document.getElementById("main-text-box");
     movesBox.innerText = data.reduce((acc, cur)=> acc + cur.move.name + "\n", "");
 }
@@ -202,33 +193,25 @@ document.getElementById("moves-box").addEventListener("click",  function() {
     document.getElementById('moves-box').style.backgroundColor = '#7CFF79';
     document.getElementById('info-box').style.backgroundColor = '#E8E8E8';
     document.getElementById('right-head').textContent = 'Moves';
-    status= 1;
+    stat= 1;
 });
 
-
-
-// new fetch request for left arrow
-
 function newFetchReqLeft() {
-    console.log('left')
     if (idNum != 1) {
     idNum = idNum - 1;
     }
     fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((info)=> {
         data = info;
-        allFunctions(info)});
+        allFunctions(info)
+    });
 }
 
-// new fetch request for right arrow
 function newFetchReqRight() {
-    console.log('here')
     idNum = idNum + 1;
     fetch("https://pokeapi.co/api/v2/pokemon/" + idNum).then((resp) => resp.json()).then((info)=> {
         data = info;
         allFunctions(info)});
-    console.log("status at end of right fetch after running all functions: " + status);
 }
-
 
 document.getElementById("left-arrow").addEventListener("click", newFetchReqLeft);
 document.getElementById("right-arrow").addEventListener("click", newFetchReqRight);
