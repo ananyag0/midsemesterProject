@@ -1,5 +1,5 @@
 let data;
-fetch("https://pokeapi.co/api/v2/pokemon/2").then((resp) => resp.json()).then((info)=> {
+fetch("https://pokeapi.co/api/v2/pokemon/1").then((resp) => resp.json()).then((info)=> {
     data = info;
     allFunctions(info)});
    
@@ -171,15 +171,15 @@ function getInfoAndMoves(data, x) {
 }
 
 getInfo = (data) => {
-    const heightField = data.height;
-    const weightField = data.weight;
+    const heightField = data.height * (1/10);
+    const weightField = data.weight * (1/10);
     const hp = data.stats[0].base_stat;
     const attack = data.stats[1].base_stat;
     const defense = data.stats[2].base_stat;
     const special_attack = data.stats[3].base_stat;
     const special_defense = data.stats[4].base_stat;
     const speed = data.stats[5].base_stat;
-    const allFields = ("Height: " + heightField + "\nWeight: " + weightField + "\nhp: " + hp + "\nAttack: " + attack + "\nDefense: " + defense + "\nSpecial Attack: " + special_attack + "\nSpecial Defense: " + special_defense + "\nSpeed: " + speed);
+    const allFields = ("height: " + heightField.toFixed(1) + "m\nweight: " + weightField.toFixed(1) + "kg\nhp: " + hp + "\nattack: " + attack + "\ndefense: " + defense + "\nspecial attack: " + special_attack + "\nspecial defense: " + special_defense + "\nspeed: " + speed);
     const attributes = document.getElementById("main-text-box");
     attributes.innerText = allFields;
 }
